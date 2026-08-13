@@ -906,56 +906,47 @@ const RESULTS = {
 const FLOW = [
   {
     "type": "story",
-    "marker": "The shop",
-    "markerLabel": "Somewhere you know &middot; one year",
+    "marker": "A word two governments fought over",
+    "markerLabel": "The General Assembly &middot; December 1960",
     "lines": [
       {
-        "mark": "January",
-        "text": "The shop on the corner is busy every afternoon."
+        "text": "Eighty-nine states vote for a resolution on the ending of colonial rule. Nine abstain."
       },
       {
-        "mark": "June",
-        "text": "The woman on the till notices the queue getting shorter each month."
+        "text": "It says **all peoples have the right to self-determination.**"
       },
       {
-        "mark": "October",
-        "text": "A note goes up on the door. There is no reason written on it."
+        "text": "The states that wrote it say that covers every territory whose people have not chosen their own government."
       },
       {
-        "text": "The owner tells you the rent went up and she could not carry it."
+        "text": "Lisbon says Angola is a province of Portugal in Portuguese law, so no colony is involved and the resolution does not apply."
       },
       {
-        "text": "The woman on the till tells you it had been dying for a year."
+        "text": "**One word. Two legal readings.**"
       },
       {
-        "text": "**Same shop. Same closing day. Two reasons.**"
-      },
-      {
-        "text": "Neither of them is lying. They were standing in different places."
-      },
-      {
-        "text": "You already ask who could see what. Now ask it of a country explaining itself."
+        "text": "Four months later the fighting starts in Angola, and both sides go on quoting the same resolution at each other."
       }
     ]
   },
   {
     "type": "question",
     "kind": "instinct",
-    "q": "Whose account would you trust more about why the shop closed?",
+    "q": "Why does it matter who wrote that resolution?",
     "options": [
-      "The owner, who signed the lease herself",
-      "The woman who worked the till daily",
-      "Both of them, for different parts",
-      "Neither, without a lot more evidence"
+      "Because the wording tells you what its authors needed it to cover",
+      "Because a resolution written by many states is more likely to be true",
+      "Because Portugal was not present in the room when it was voted on",
+      "Because the number of votes decides how a legal text must be read"
     ],
-    "explanation": "There is no score on this one. The owner saw the lease. The woman on the till saw the queue getting shorter every month. But neither of them saw the whole thing, and neither of them is lying. Who could see what, and from where: that is the question you will put to a government document later in this lesson.",
-    "correct": 2,
+    "explanation": "There is no score on this one. Most of the states voting for it had themselves been ruled from Europe within living memory. That does not make the resolution false, and it does not make Lisbon's reading dishonest. It tells you what each side needed the words to do. You are about to read a document with the same problem inside it. In the exam, an answer that only says what a source states will not reach the marks that ask who produced it.",
+    "correct": 0,
     "noSource": true
   },
   {
     "type": "content",
     "tag": "The turn",
-    "html": "<h2>The word for what you just did</h2><p>You did not ask whether the account was true. You asked who made it, and from where.</p><p>That is <strong>provenance</strong>: the origin of a source. Who produced it, when, and what position they were in when they did.</p><p>Every source question in Paper 1 sits on it. You cannot judge how far to trust something until you know where it came from.</p>",
+    "html": "<h2>The word for what you just did</h2><p>You did not ask whether the resolution was true. You asked who wrote it, and what they needed it to cover.</p><p>That is <strong>provenance</strong>: the origin of a source. Who produced it, when, and what position they were in when they did.</p><p>Every source question in Paper 1 sits on it. You cannot judge how far to trust something until you know where it came from.</p>",
     "remember": "A source is somebody's account, made somewhere, for someone. Start there, not with whether it is true.",
     "terms": [
       {
@@ -1201,7 +1192,7 @@ const FLOW = [
       },
       {
         "lead": "11 November 1975",
-        "body": "The date Alvor set for independence. Hold it: Lesson 3 turns on what happened just before it."
+        "body": "The date Alvor set for independence. Hold it: Lesson 3 depends on what happened just before it."
       }
     ]
   },
@@ -1761,7 +1752,7 @@ function showResults(){
   });
   /* The button at the end of the lesson is the thing that continues. It does
      not point at a control somewhere else on the page. */
-  document.getElementById("finish-btn").addEventListener("click",()=>{ KulaLMS.advance(); });
+  document.getElementById("finish-btn").onclick = ()=>{ KulaLMS.advance(); };
   KulaLMS.completed();
 }
 

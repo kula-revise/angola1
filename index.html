@@ -482,6 +482,8 @@ body.dark .figure img { filter: brightness(0.9) contrast(1.02); }
   .toggle-btn { font-family: var(--sans); background: transparent; border: none; color: var(--a1); cursor: pointer; font-size: 0.88rem; font-weight: 600; text-decoration: underline; padding: 0.7rem 0 0; }
   .toggle-body { display: none; margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px dashed var(--hair-strong); font-size: 0.94rem; color: var(--muted); line-height: 1.66; }
   .toggle-body.open { display: block; }
+  .toggle-body p { font-size: inherit; line-height: inherit; color: inherit; margin: 0 0 0.75rem; }
+  .toggle-body p:last-child { margin-bottom: 0; }
 
   /* Questions */
   .q-text { font-size: 1.16rem; line-height: 1.5; font-weight: 600; margin-bottom: 1.2rem; }
@@ -939,7 +941,7 @@ const FLOW = [
       "Because Portugal was not present in the room when it was voted on",
       "Because the number of votes decides how a legal text must be read"
     ],
-    "explanation": "There is no score on this one. Most of the states voting for it had themselves been ruled from Europe within living memory. That does not make the resolution false, and it does not make Lisbon's reading dishonest. It tells you what each side needed the words to do. You are about to read a document with the same problem inside it. In the exam, an answer that only says what a source states will not reach the marks that ask who produced it.",
+    "explanation": "Most of the states voting for it had themselves been ruled from Europe within living memory. That does not make the resolution false. It does not make Lisbon's reading dishonest either. It does tell you what each side needed the words to do. In a moment you will read a document with the same problem inside it. In the exam, an answer that only repeats what a source says stops short. The marks for who produced it sit beyond that.",
     "correct": 0,
     "noSource": true
   },
@@ -1048,7 +1050,7 @@ const FLOW = [
       2,
       4
     ],
-    "explanation": "1961, then the early 1970s, then April 1974, then January 1975. The easy mistake is putting the coup before the money trouble. It is the other way round. The wars had been draining the budget for years, and that is why you get officers overthrowing their own government.",
+    "explanation": "The order runs 1961, then the early 1970s, then April 1974, then January 1975. The coup and the money trouble are the easy pair to swap. The money trouble came first. The wars had been draining Portugal's budget for years, which is why its own officers overthrew the government. Put the coup first and you lose the cause, and the marks go with it.",
     "noSource": true
   },
   {
@@ -1058,7 +1060,7 @@ const FLOW = [
     "source": {
       "attr": "Source A: adapted from an editorial note, Foreign Relations of the United States 1969 to 1976, Volume XXVIII, Southern Africa, Document 101. A United States government publication.",
       "body": "<p>The overthrow of Marcello Caetano's government in Portugal on April 25, 1974, led to a series of negotiations between the metropole [Portugal itself] and the African liberation movements &hellip;</p><p>Negotiations with the FNLA, the MPLA and UNITA were hampered [held back] by continued dissension [disagreement] among the leadership &hellip; The [Portuguese] proposal was immediately rejected by the FNLA, and internal dissent within the MPLA threatened to fracture [break up] the organization &hellip;</p><p>An agreement was signed January 15, 1975, between the liberation movements and Portugal, providing for Angolan independence on November 11 and equal representation in a transition government that would take office on January 31, 1975. A High Commissioner was appointed to represent Portugal's interests until independence. The transitional government was responsible for organizing elections and drafting the fundamental law [a temporary constitution] &hellip; The agreement, signed at Alvor, Portugal, became known as the Alvor Agreement.</p>",
-      "toggle": "This note was compiled by American government editors long after 1975, so it is a summary of events rather than a document written at the time. That is why it reads so evenly: nobody in it is defending themselves. One clue to where it came from is the spelling. Organization and organizing are American spellings, which is how a United States government publication writes them.",
+      "toggle": "<p>Portugal's government was overthrown at home in April 1974, and the new government began talks with the three Angolan movements. Those talks went badly. The FNLA rejected Portugal's proposal outright, and the MPLA was close to splitting. An agreement was signed anyway, at Alvor in January 1975. It set independence for 11 November. The three movements got equal shares in a transition government from 31 January. That government was made responsible for elections and a temporary constitution.</p><p>Now the wording. \"Dissension\" and \"internal dissent\" both mean disagreement, and both are about the movements rather than Portugal. \"Hampered\" means held back, so the talks never broke down completely.</p><p>One thing to notice about the source itself. It was compiled by American government editors long after 1975, so it summarises events rather than recording them. That is why nobody in it is defending themselves. The American spellings \"organization\" and \"organizing\" tell you who wrote it.</p>",
       "toggleLabel": "What does this actually mean?"
     },
     "terms": [
@@ -1097,7 +1099,7 @@ const FLOW = [
       "2": 1,
       "3": 1
     },
-    "explanation": "The first two are on the page. The other two are true, and you read them earlier in this lesson. That is what makes them easy to put in the wrong column. A quote question only takes what the source says, so check whether you are reading it or remembering it."
+    "explanation": "The first two are on the page. The other two are true, and you read them earlier in this lesson. Being true is what makes them easy to put in the wrong column. A quote question pays only for what the source says. Check whether you are reading it or remembering it, or a marker cannot give you the mark."
   },
   {
     "type": "question",
@@ -1110,7 +1112,7 @@ const FLOW = [
       "The appointment of a High Commissioner for Portugal"
     ],
     "correct": 0,
-    "explanation": "Option {opt0}, straight off the first line. Option {opt2} is real and it is in the source, but it happens months later. The question hands you a date. Use it."
+    "explanation": "Option {opt0} comes straight off the first line of the source. Option {opt2} is real and it is in the source, but it happens months later. The question hands you a date, so use it to find the right line. Quote the right event from the wrong month and a marker cannot give you the mark."
   },
   {
     "type": "question",
@@ -1123,7 +1125,7 @@ const FLOW = [
       "A country trading with another on terms both sides agreed"
     ],
     "correct": 0,
-    "explanation": "Portugal ran Angola from Lisbon, and ran it for Lisbon. Both halves have to be in your answer. Option {opt3} sounds fair, but two countries trading can both walk away and Angola could not.",
+    "explanation": "Portugal ran Angola from Lisbon, and it ran Angola for Lisbon. Both halves have to be in your answer. Option {opt3} sounds fair until you test it. Two countries trading can each walk away, and Angola could not. Give only the governing half and a marker can give you one mark of the two.",
     "noSource": true
   },
   {
@@ -1137,7 +1139,7 @@ const FLOW = [
       "They agreed on everything except the exact date of independence"
     ],
     "correct": 0,
-    "explanation": "The word to notice is internal. They were splitting from each other and from themselves at the same time. Option {opt3} is the tidier story. When a story looks that tidy, you have usually stopped reading too early."
+    "explanation": "The word to notice is \"internal\". The movements were splitting from each other and from themselves at the same time. Option {opt3} is the tidier story, and tidy is usually a sign you stopped reading too early. Read to the end of the extract. A marker gives the interpretation marks for the divisions inside each movement, not only between them."
   },
   {
     "type": "question",
@@ -1150,7 +1152,7 @@ const FLOW = [
       "Not useful, because it never names the three liberation movements"
     ],
     "correct": 0,
-    "explanation": "Good on dates, terms and order. It was written years later by American editors, so it is a summary and not a document from 1975. Option {opt1} has a point buried in it. But careful is not the same as useless, so say what this one lets you do."
+    "explanation": "Take a position, then say what the source can do. It is good on dates, terms and order. It was written years later by American editors, so it summarises 1975 rather than recording it. Option {opt1} has a point buried in it, because a government did write this. Careful and useless are not the same thing. Say what this source lets you do and a marker can give you the marks."
   },
   {
     "type": "question",
@@ -1163,7 +1165,7 @@ const FLOW = [
       "It contradicts other published accounts of the Alvor terms it lists"
     ],
     "correct": 0,
-    "explanation": "A limitation is what a source could not see. This one records what the leaderships agreed. Nobody outside those rooms is in it. Option {opt3} would be a fault, not a gap, and you were asked about the gap."
+    "explanation": "A limitation is what a source could not see. This one records what the three leaderships agreed at Alvor. Nobody outside those rooms appears in it at all. Option {opt3} would be a fault in the source rather than a gap in its reach. You were asked for the gap. A marker cannot give you the marks for anything else."
   },
   {
     "type": "carousel",

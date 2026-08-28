@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portugal Holds On | Independent Africa: Angola | Kula Revise</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      KULA SOURCE ENGINE v3: TOKEN CONTRACT
@@ -35,8 +32,8 @@
     --a1: #B4622D;   --a1-rgb: 180,98,45;
     --a2: #1F6B58;   --a2-rgb: 31,107,88;
     --serif: Georgia, 'Times New Roman', serif;
-    --sans:  system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --mono:  var(--sans);
+    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --mono: ui-monospace, 'Cascadia Code', Consolas, 'Courier New', monospace;
 
     /* ---- DERIVED TOKENS. A skin should not need to touch these. ----
        They exist because the engine used to hardcode fourteen literal
@@ -48,7 +45,6 @@
     --hair:       rgba(0,0,0,0.12);     /* progress track, quiet rules */
     --hair-strong:rgba(0,0,0,0.28);     /* dashed divider inside an expander */
     --on-ink:     var(--paper);         /* text sitting on an --ink ground */
-    --on-ink-mute:#B8AFE0;              /* secondary text on an --ink ground */
     --on-a1:      var(--paper);         /* text sitting on an --a1 ground */
     --on-a2:      var(--paper);         /* text sitting on an --a2 ground */
     --ink-deep:   #12202a;              /* --ink one step darker, button hover */
@@ -70,12 +66,12 @@
   }
 
   /* ---- DARK MODE TOKEN RE-POINT ---------------------------------------
-     The skin supplies body.dark values for the thirteen identity variables.
+     The skin supplies body.alt values for the thirteen identity variables.
      Everything derived re-points here, once, for every unit. This is the
      engine-level fix for the three defects logged in MOBILE_FIXES_HANDOVER:
      a skin no longer needs the patch block at all.
      ------------------------------------------------------------------- */
-  body.dark {
+  body.alt {
     --muted:      var(--fade);
     --hair:       rgba(255,255,255,0.14);
     --hair-strong:rgba(255,255,255,0.26);
@@ -93,11 +89,11 @@
     --inset:  rgba(255,255,255,0.05);
   }
   /* Key term chips keep a visible edge once the ground inverts. */
-  body.dark .kt-term { border-color: var(--hair-strong); }
-  body.dark .kt-term summary { color: var(--ink); }
-  body.dark .kt-label { border-top-color: var(--hair-strong); }
+  body.alt .kt-term { border-color: var(--hair-strong); }
+  body.alt .kt-term summary { color: var(--ink); }
+  body.alt .kt-label { border-top-color: var(--hair-strong); }
   /* v2 dimmed the options a learner did not pick; at 0.45 they vanish on a dark ground. */
-  body.dark .option.dimmed, body.dark .option-btn.dimmed { opacity: 0.72; }
+  body.alt .option.dimmed, body.alt .option-btn.dimmed { opacity: 0.72; }
 
   /* ---- MODE TOGGLE. Fixed bottom right, 44px minimum tap target. ---- */
   .mode-toggle {
@@ -135,45 +131,42 @@
     .top-meta { font-size: 0.62rem; letter-spacing: 0.09em; }
   }
 
-/* ANGOLA IEB: ultra
-   Identity is the violet accent. In dark it sits against deep indigo with an
-   acid lime as the quiet pair colour, so the screen reads as a product a
-   learner already uses rather than as a document.
-   Independent Africa is one IEB topic with two strands. The Congo is the essay
+/* ANGOLA: chamber and cable
+   Independent Africa is one CAPS topic with two strands. The Congo is the essay
    strand and holds Ore Seam, so Angola must not read as a variant of it.
    The metaphor comes from what the sources actually are: this strand is argued
    in rooms where outside powers speak about Angola in front of each other, and
    recorded as tabled papers with a symbol in the corner. */
 
 :root {
-  /* grounds and ink: cool lilac paper, near-black indigo type */
-  --sand:  #F1F0F8;   /* page background */
-  --paper: #FFFFFF;   /* cards */
-  --cut:   #EAE8F4;   /* insets, sources, carousels */
-  --ink:   #100B22;   /* body text */
-  --clay:  #55507A;   /* stage tags, quiet labels: steel, not terracotta */
-  --fade:  #403A5C;   /* muted text, captions */
-  /* accents: violet carries the identity, deep teal labels beside it */
-  --a1: #0E6E85;  --a1-rgb: 14,110,133;
-  --a2: #6D28D9;  --a2-rgb: 109,40,217;
+  /* grounds and ink: cool slate against a cold paper, not warm sand */
+  --sand:  #E4E7E4;   /* page background */
+  --paper: #F7F8F6;   /* cards */
+  --cut:   #EDF0EE;   /* insets, sources, carousels */
+  --ink:   #1A2327;   /* body text */
+  --clay:  #5C6B73;   /* stage tags, quiet labels: steel, not terracotta */
+  --fade:  #79858B;   /* muted text, captions */
+  /* accents: brick red for the argued line, deep teal for the settled one */
+  --a1: #9C3D2E;  --a1-rgb: 156,61,46;
+  --a2: #24565C;  --a2-rgb: 36,86,92;
   /* type: a transitional serif for the history, mono for anything with a symbol */
-  --serif: 'Fraunces', Georgia, serif;
-  --sans:  'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-  --mono:  'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, 'Courier New', monospace;
 }
 
 /* Flat ground. Ore Seam layers two warm radial washes; this one is a cold
    surface with a faint vertical rule, like paper on a table. */
 body {
   background-image:
-    repeating-linear-gradient(90deg, transparent 0 38px, rgba(16,11,34,0.028) 38px 39px) !important;
+    repeating-linear-gradient(90deg, transparent 0 38px, rgba(26,35,39,0.028) 38px 39px) !important;
 }
 
 /* Edges are square and ruled rather than soft. Every card carries a hairline
    and a single accent stripe at the head. */
 .card, .source, .stat-wrap, .carousel, .kt {
   border-radius: 0 !important;
-  border: 1px solid rgba(154,100,16,0.20) !important;
+  border: 1px solid rgba(36,86,92,0.20) !important;
   box-shadow: none !important;
 }
 .card { border-top: 3px solid var(--a2) !important; }
@@ -199,7 +192,7 @@ body {
   text-transform: uppercase;
   color: var(--a1) !important;
   text-align: right;
-  border-bottom: 1px solid rgba(154,100,16,0.18);
+  border-bottom: 1px solid rgba(36,86,92,0.18);
   padding-bottom: 0.6rem;
   margin-bottom: 0.9rem;
 }
@@ -213,7 +206,7 @@ body {
   height: 2px !important;
   background-image: none !important;
   background: linear-gradient(90deg,
-    var(--a1) 0 20%, rgba(154,100,16,0.30) 20% 100%) !important;
+    var(--a1) 0 20%, rgba(36,86,92,0.30) 20% 100%) !important;
 }
 
 /* The cover lede is italic serif in v2; here it is upright, so the opening
@@ -232,34 +225,34 @@ body {
 .btn-begin:hover { background: var(--ink) !important; color: var(--paper) !important; }
 
 
-/* Dark mode. The paper ground goes to deep indigo and the cards to a raised
-   indigo, so the violet and the lime are the only bright things on screen. */
-body.dark {
-  --sand:  #0B0918;
-  --paper: #151129;
-  --cut:   #1E1938;
-  --ink:   #EFECFB;
-  --clay:  #A79CD4;
-  --fade:  #ACA3CC;
-  --a1: #C9FF3D;  --a1-rgb: 201,255,61;
-  --a2: #A78BFA;  --a2-rgb: 167,139,250;
+/* Dark mode. The slate ground goes to deep ink and the papers to a cold
+   charcoal, so the chamber reads as the same room after hours. */
+body.alt {
+  --sand:  #141A1D;
+  --paper: #1D2529;
+  --cut:   #232C31;
+  --ink:   #E6EBEA;
+  --clay:  #93A3AB;
+  --fade:  #8B979D;
+  --a1: #D0664F;  --a1-rgb: 208,102,79;
+  --a2: #58A6A2;  --a2-rgb: 88,166,162;
 }
-body.dark { background-image:
-  repeating-linear-gradient(90deg, transparent 0 38px, rgba(239,236,251,0.035) 38px 39px) !important; }
-body.dark .card, body.dark .source, body.dark .stat-wrap,
-body.dark .carousel, body.dark .kt { border-color: rgba(167,139,250,0.30) !important; }
-body.dark .btn-begin { border-color: var(--ink) !important; color: var(--ink) !important; }
-body.dark .btn-begin:hover { background: var(--ink) !important; color: var(--sand) !important; }
-body.dark .mode-toggle { background: var(--paper); border-color: rgba(239,236,251,0.24); }
+body.alt { background-image:
+  repeating-linear-gradient(90deg, transparent 0 38px, rgba(230,235,234,0.035) 38px 39px) !important; }
+body.alt .card, body.alt .source, body.alt .stat-wrap,
+body.alt .carousel, body.alt .kt { border-color: rgba(88,166,162,0.28) !important; }
+body.alt .btn-begin { border-color: var(--ink) !important; color: var(--ink) !important; }
+body.alt .btn-begin:hover { background: var(--ink) !important; color: var(--sand) !important; }
+body.alt .mode-toggle { background: var(--paper); border-color: rgba(230,235,234,0.24); }
 
 /* The RECALL chip keeps its light background in dark mode, so it glares.
    Tier chips get dark-mode grounds of their own. */
-body.dark .chip { background: rgba(167,139,250,0.20) !important; color: #DDD3FE !important; }
-body.dark .chip-a,  body.dark .chip-a   { background: rgba(167,139,250,0.22) !important; color: #D3FF7A !important; }
-body.dark .chip-b, body.dark .chip-b { background: rgba(201,255,61,0.16) !important; color: #E8FFB8 !important; }
-body.dark .chip-c,   body.dark .chip-d  { background: rgba(239,236,251,0.16) !important; color: #EFECFB !important; }
+body.alt .chip { background: rgba(88,166,162,0.16) !important; color: #BFE0DD !important; }
+body.alt .chip-recall,  body.alt .chip-extract   { background: rgba(208,102,79,0.20) !important; color: #F0BAAB !important; }
+body.alt .chip-understand, body.alt .chip-interpret { background: rgba(88,166,162,0.18) !important; color: #B7DEDA !important; }
+body.alt .chip-apply,   body.alt .chip-evaluate  { background: rgba(230,235,234,0.16) !important; color: #E6EBEA !important; }
 /* Options need a visible edge against the charcoal card. */
-body.dark .option-btn, body.dark .opt-btn { border-color: rgba(239,236,251,0.20) !important; }
+body.alt .option-btn, body.alt .opt-btn { border-color: rgba(230,235,234,0.20) !important; }
 
 
 /* ---- DARK MODE STATE COLOURS -----------------------------------------------
@@ -267,68 +260,68 @@ body.dark .option-btn, body.dark .opt-btn { border-color: rgba(239,236,251,0.20)
    Left alone they produce pale text on pale grounds. */
 
 /* Answer states: dark grounds with a coloured edge, text stays --ink. */
-body.dark .option-btn.correct {
-  background: rgba(167,139,250,0.20) !important;
-  border-color: #A78BFA !important;
+body.alt .option-btn.correct {
+  background: rgba(88,166,162,0.16) !important;
+  border-color: #58A6A2 !important;
   color: var(--ink) !important;
 }
-body.dark .option-btn.wrong {
-  background: rgba(167,139,250,0.16) !important;
-  border-color: #C4B5FD !important;
+body.alt .option-btn.wrong {
+  background: rgba(208,102,79,0.16) !important;
+  border-color: #D0664F !important;
   color: var(--ink) !important;
 }
-body.dark .option-btn.correct .opt-text,
-body.dark .option-btn.wrong   .opt-text { color: var(--ink) !important; }
-body.dark .option-btn.correct .opt-letter { color: #C4B5FD !important; }
-body.dark .option-btn.wrong   .opt-letter { color: #DAFF8C !important; }
-body.dark .opt-mark { color: var(--ink) !important; }
+body.alt .option-btn.correct .opt-text,
+body.alt .option-btn.wrong   .opt-text { color: var(--ink) !important; }
+body.alt .option-btn.correct .opt-letter { color: #7FC7C2 !important; }
+body.alt .option-btn.wrong   .opt-letter { color: #E89A87 !important; }
+body.alt .opt-mark { color: var(--ink) !important; }
 /* v2 dims the options a learner did not pick; at 0.45 on a dark ground they vanish. */
-body.dark .option-btn.dimmed { opacity: 0.72 !important; }
+body.alt .option-btn.dimmed { opacity: 0.72 !important; }
 
 /* The full-check button is dark-on-dark once the ground inverts. */
-body.dark .primary-btn {
+body.alt .primary-btn {
   background: var(--cut) !important;
-  border: 1px solid rgba(167,139,250,0.45) !important;
+  border: 1px solid rgba(88,166,162,0.40) !important;
   color: var(--ink) !important;
 }
-body.dark .primary-btn:hover { background: #241E42 !important; }
-body.dark .primary-btn .btn-title { color: var(--ink) !important; }
-body.dark .primary-btn .btn-sub,
-body.dark .primary-btn .btn-arrow { color: #C0B6EC !important; }
+body.alt .primary-btn:hover { background: #2B363C !important; }
+body.alt .primary-btn .btn-title { color: var(--ink) !important; }
+body.alt .primary-btn .btn-sub,
+body.alt .primary-btn .btn-arrow { color: var(--clay) !important; }
 
 /* Section rows and the small action button. */
-body.dark .section-btn { border-color: rgba(239,236,251,0.18) !important; color: var(--ink) !important; }
-body.dark .section-btn:hover { background: var(--cut) !important; border-color: var(--a2) !important; }
-body.dark .primary-btn-small { background: var(--a2) !important; color: #0B0918 !important; }
-body.dark .primary-btn-small:hover:not(:disabled) { background: #B79BFB !important; }
-body.dark .secondary-btn { border-color: rgba(239,236,251,0.30) !important; color: var(--ink) !important; }
-body.dark .secondary-btn:hover:not(:disabled) { background: var(--cut) !important; }
+body.alt .section-btn { border-color: rgba(230,235,234,0.18) !important; color: var(--ink) !important; }
+body.alt .section-btn:hover { background: var(--cut) !important; border-color: var(--a2) !important; }
+body.alt .primary-btn-small { background: var(--a2) !important; color: #0E1518 !important; }
+body.alt .primary-btn-small:hover:not(:disabled) { background: #6FBCB7 !important; }
+body.alt .secondary-btn { border-color: rgba(230,235,234,0.30) !important; color: var(--ink) !important; }
+body.alt .secondary-btn:hover:not(:disabled) { background: var(--cut) !important; }
 
 /* The explanation panel and the quiz footer links. */
-body.dark .explanation { background: var(--cut) !important; border-color: rgba(167,139,250,0.30) !important; }
-body.dark .expl-text { color: var(--ink) !important; }
-body.dark .quiz-foot a, body.dark .quiz-foot { color: var(--clay) !important; }
+body.alt .explanation { background: var(--cut) !important; border-color: rgba(88,166,162,0.28) !important; }
+body.alt .expl-text { color: var(--ink) !important; }
+body.alt .quiz-foot a, body.alt .quiz-foot { color: var(--clay) !important; }
 
 
 /* The lesson engine uses .option where the quiz uses .option-btn, so the
    state overrides have to name both or half the product stays broken. */
-body.dark .option { background: var(--cut) !important; border-color: rgba(239,236,251,0.18) !important; color: var(--ink) !important; }
-body.dark .option.selected { background: rgba(167,139,250,0.14) !important; border-color: #C4B5FD !important; }
-body.dark .option.correct {
-  background: rgba(167,139,250,0.20) !important;
-  border-color: #A78BFA !important;
+body.alt .option { background: var(--cut) !important; border-color: rgba(230,235,234,0.18) !important; color: var(--ink) !important; }
+body.alt .option.selected { background: rgba(208,102,79,0.14) !important; border-color: #D0664F !important; }
+body.alt .option.correct {
+  background: rgba(88,166,162,0.16) !important;
+  border-color: #58A6A2 !important;
   color: var(--ink) !important;
 }
-body.dark .option.wrong {
-  background: rgba(167,139,250,0.16) !important;
-  border-color: #C4B5FD !important;
+body.alt .option.wrong {
+  background: rgba(208,102,79,0.16) !important;
+  border-color: #D0664F !important;
   color: var(--ink) !important;
 }
-body.dark .option.correct .opt-text,
-body.dark .option.wrong   .opt-text { color: var(--ink) !important; }
-body.dark .option.correct .opt-letter { color: #C4B5FD !important; }
-body.dark .option.wrong   .opt-letter { color: #DAFF8C !important; }
-body.dark .option.dimmed { opacity: 0.72 !important; }
+body.alt .option.correct .opt-text,
+body.alt .option.wrong   .opt-text { color: var(--ink) !important; }
+body.alt .option.correct .opt-letter { color: #7FC7C2 !important; }
+body.alt .option.wrong   .opt-letter { color: #E89A87 !important; }
+body.alt .option.dimmed { opacity: 0.72 !important; }
 
 
 /* The toggle is fixed bottom right and lands on the Continue button on a short
@@ -347,14 +340,14 @@ body { padding-bottom: 4.5rem !important; }
   margin-left: auto; margin-right: auto;
   font-size: 0.84rem !important;
   color: var(--clay) !important;
-  border-top: 1px solid rgba(154,100,16,0.20);
+  border-top: 1px solid rgba(36,86,92,0.20);
   padding-top: 0.6rem;
 }
-.figure img { border: 1px solid rgba(154,100,16,0.30) !important; }
-body.dark .figure img { border-color: rgba(201,255,61,0.30) !important; }
-body.dark .figure figcaption { border-top-color: rgba(201,255,61,0.24); }
+.figure img { border: 1px solid rgba(36,86,92,0.30) !important; }
+body.alt .figure img { border-color: rgba(88,166,162,0.30) !important; }
+body.alt .figure figcaption { border-top-color: rgba(88,166,162,0.24); }
 /* An archival photograph should not glare against the dark ground. */
-body.dark .figure img { filter: brightness(0.9) contrast(1.02); }
+body.alt .figure img { filter: brightness(0.9) contrast(1.02); }
 
 
 
@@ -489,7 +482,7 @@ body.dark .figure img { filter: brightness(0.9) contrast(1.02); }
   .option.correct { background: var(--ok-bg); border-color: var(--a2); border-width: 2px; padding: 0.94rem 0.99rem; }
   .option.wrong { background: var(--no-bg); border-color: var(--clay); border-width: 2px; padding: 0.94rem 0.99rem; }
   .option.dimmed { opacity: 0.46; }
-  body.dark .option.dimmed { opacity: 0.72; }
+  body.alt .option.dimmed { opacity: 0.72; }
   .opt-letter { font-family: var(--serif); font-weight: 800; color: var(--a1); min-width: 1.1rem; }
   .opt-text { flex: 1; }
   .opt-mark { font-weight: 700; font-size: 1.1rem; }
@@ -497,12 +490,12 @@ body.dark .figure img { filter: brightness(0.9) contrast(1.02); }
   .expl-label { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--a2); font-weight: 700; margin-bottom: 0.5rem; }
   .expl-text { line-height: 1.7; font-size: 0.96rem; }
   .chip { display: inline-block; font-family: var(--sans); padding: 0.22rem 0.65rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-  .chip-a { background: var(--chip-a-bg); color: var(--chip-a-fg); }
-  .chip-b { background: var(--chip-a-bg); color: var(--chip-a-fg); }
-  .chip-c { background: var(--a2); color: var(--on-a2); }
-  .chip-a { background: var(--chip-a-bg); color: var(--chip-a-fg); }
-  .chip-b { background: var(--chip-b-bg); color: var(--chip-b-fg); }
-  .chip-d { background: var(--a2); color: var(--on-a2); }
+  .chip-argue { background: var(--chip-a-bg); color: var(--chip-a-fg); }
+  .chip-evidence { background: var(--chip-a-bg); color: var(--chip-a-fg); }
+  .chip-weigh { background: var(--a2); color: var(--on-a2); }
+  .chip-extract { background: var(--chip-a-bg); color: var(--chip-a-fg); }
+  .chip-interpret { background: var(--chip-b-bg); color: var(--chip-b-fg); }
+  .chip-evaluate { background: var(--a2); color: var(--on-a2); }
   .chip-instinct { background: var(--chip-c-bg); color: var(--clay); }
 
   /* Reopen the source from inside a question */
@@ -607,107 +600,9 @@ body.dark .figure img { filter: brightness(0.9) contrast(1.02); }
   .results-actions button { flex: 1; }
   .hidden { display: none !important; }
 
-
-/* ============================================================
-   MOBILE. Added August 2026.
-   Everything here is inside a narrow-screen query except the tap
-   target floor, which applies at every width because a 44px
-   target is not worse on a desktop. Nothing above 560px changes.
-   ============================================================ */
-
-/* Tap targets. Anything a learner presses is at least 44px tall,
-   which is the smallest reliable target for a thumb. */
-.btn-primary, .btn-secondary, .btn-small, .btn-skip, .btn-begin,
-.term-btn, .toggle-btn, .option, .ord-chip, .ord-slot, .sort-tag,
-.mode-toggle, #kula-mode-toggle, button.go, .opt, .chip[role="button"],
-.tglr, .termsbtn, .kt-term {
-  min-height: 44px;
-}
-
-@media (max-width: 560px) {
-  /* the page gutter takes width the text needs more than the margin does */
-  body { padding-left: 0.75rem; padding-right: 0.75rem; }
-
-  /* two sort columns at 360px leave about 135px each, which is
-     narrower than the sentences that go in them */
-  .sort-cols, .bins { grid-template-columns: 1fr; }
-
-  /* the results breakdown keeps its three columns and gives the
-     label more of them */
-  .bd-row      { grid-template-columns: 1fr 72px 38px; gap: 0.5rem; font-size: 0.8rem; }
-  .breakdown-row { grid-template-columns: 1fr 68px 36px; gap: 0.5rem; font-size: 0.8rem; }
-  .marked      { grid-template-columns: 1fr; }
-
-  /* two buttons plus a gap can exceed the line, so let them wrap
-     and fill instead of overflowing */
-  .nav, .cap-actions, .actions { flex-wrap: wrap; }
-  .nav > *, .cap-actions > *, .actions > * { flex: 1 1 auto; }
-
-  /* display type set for a laptop is too large for a phone */
-  .cover-title { font-size: 2rem; line-height: 1.12; }
-  .story-num   { font-size: 2.6rem; }
-  h1 { font-size: 1.75rem; line-height: 1.18; }
-  h2 { font-size: 1.3rem; line-height: 1.25; }
-
-  /* card padding on top of body padding leaves too little for text */
-  .card, .sheet, .sleeve, .source { padding-left: 1rem; padding-right: 1rem; }
-
-  /* long attributions and quoted lines must not push the page sideways */
-  .attr, .source-attr, .src-attr, blockquote, pre { overflow-wrap: anywhere; }
-}
-
-@media (max-width: 400px) {
-  .bd-row      { grid-template-columns: 1fr 56px 34px; font-size: 0.76rem; }
-  .breakdown-row { grid-template-columns: 1fr 54px 32px; font-size: 0.76rem; }
-  .cover-title { font-size: 1.7rem; }
-  .story-num   { font-size: 2.2rem; }
-}
-
-/* Correct and wrong are coded green and red, below the identity accent.
-   Before this, dark mode marked correct in violet and wrong in lime, so the
-   two states read as the same colour family. Ticks and crosses already exist
-   in the markup, so the coding does not rest on colour alone. */
-:root{ --ok:#0F6B3F; --ok-tint:#E6F3EA; --no:#C1121F; --no-tint:#FBE3E4; }
-body.dark{ --ok:#6EDA9B; --ok-tint:#12301F; --no:#FF6B5E; --no-tint:#3A1512; }
-.option.correct, .option-btn.correct,
-body.dark .option.correct, body.dark .option-btn.correct{
-  background:var(--ok-tint) !important; border-color:var(--ok) !important; border-width:2px !important; }
-.option.wrong, .option-btn.wrong,
-body.dark .option.wrong, body.dark .option-btn.wrong{
-  background:var(--no-tint) !important; border-color:var(--no) !important; border-width:2px !important; }
-.option.correct .opt-letter, .option.correct .opt-mark,
-.option-btn.correct .opt-letter, .option-btn.correct .opt-mark,
-body.dark .option.correct .opt-letter, body.dark .option.correct .opt-mark,
-body.dark .option-btn.correct .opt-letter, body.dark .option-btn.correct .opt-mark{
-  color:var(--ok) !important; font-weight:800 !important; }
-.option.wrong .opt-letter, .option.wrong .opt-mark,
-.option-btn.wrong .opt-letter, .option-btn.wrong .opt-mark,
-body.dark .option.wrong .opt-letter, body.dark .option.wrong .opt-mark,
-body.dark .option-btn.wrong .opt-letter, body.dark .option-btn.wrong .opt-mark{
-  color:var(--no) !important; font-weight:800 !important; }
-.option.correct .opt-text, .option.wrong .opt-text,
-body.dark .option.correct .opt-text, body.dark .option.wrong .opt-text{ color:var(--ink) !important; }
-.explanation.ok, body.dark .explanation.ok{
-  background:var(--ok-tint) !important; border-color:var(--ok) !important; border-left-color:var(--ok) !important; }
-.explanation.no, body.dark .explanation.no{
-  background:var(--no-tint) !important; border-color:var(--no) !important; border-left-color:var(--no) !important; }
-.explanation.ok .expl-label, body.dark .explanation.ok .expl-label{ color:var(--ok) !important; }
-.explanation.no .expl-label, body.dark .explanation.no .expl-label{ color:var(--no) !important; }
 </style>
 </head>
 <body>
-<script>
-window.kulaEmbed = (function(){
-  var sentCompleted = false;
-  return function(ev){
-    if(ev === "completed"){ if(sentCompleted) return; sentCompleted = true; }
-    try{
-      window.parent.postMessage({type:"lms-embed-event",version:"1.0",payload:{event:ev}}, "*");
-    }catch(e){}
-  };
-})();
-</script>
-
 <div class="container">
   <div class="top-bar hidden" id="top-bar">
     <div class="top-meta"><span id="lesson-tag">Kula Revise &middot; Grade 12 &middot; Angola</span><span class="top-count" id="step-count"></span></div>
@@ -759,86 +654,54 @@ const RESULTS = {
 const FLOW = [
   {
     "type": "story",
-    "marker": "1961",
-    "markerLabel": "Northern Angola &middot; February",
+    "marker": "A street",
+    "markerLabel": "Somewhere you know &middot; any Tuesday",
     "lines": [
-      "In February 1961 fighting breaks out on the coffee estates of northern Angola.",
-      "Lisbon tells the world that criminals attacked farms and the authorities restored order.",
-      "A missionary writing to his family describes villages emptied and people hiding in the forest.",
-      "Same weeks. Two Angolas.",
-      "One account was written for a government. The other was written to a family."
+      "The shop on the corner closes. There's a note on the door and nothing else.",
+      "The owner tells you the rent went up and she couldn't carry it any more.",
+      "The woman who worked the till tells you it had been dying for a year.",
+      "Same shop. Same closing day. Two reasons.",
+      "One of them was inside it longer. That's your first question about anyone's account of anything."
     ]
   },
   {
     "type": "question",
     "kind": "instinct",
-    "q": "Both accounts of February 1961 survive. What is the first thing to establish about each one?",
+    "q": "Whose account would you trust more about why the shop closed?",
     "options": [
-      "Who wrote it, and what they could see from there",
-      "Which of the two gives the larger number of deaths",
-      "Whether the account was written during the fighting or later",
-      "Which account historians have quoted more often since 1961"
+      "The owner, who signed the lease herself",
+      "The woman who worked the till daily",
+      "Both of them, for different parts",
+      "Neither, without a lot more evidence"
     ],
-    "explanation": "You cannot judge an account until you know who wrote it and why. Lisbon needed the fighting to look like crime, because a colony in revolt would pull other governments in. The missionary was writing to people who would never publish him. Option {opt2} matters too, and it comes second. Skip the who, and you are judging a source you have not placed.",
-    "correct": 0,
+    "explanation": "There's no score on this one. The owner saw the lease. The woman on the till saw the queue getting shorter every month. But neither of them saw the whole thing, and neither of them's lying. Who could see what, and from where: that's the question you'll put to a government document later in this lesson.",
+    "correct": 2,
     "noSource": true
-  },
-  {
-    "type": "question",
-    "kind": "instinct",
-    "noSource": true,
-    "q": "Lisbon called the events of 1961 a criminal attack rather than a revolt. What does that word choice tell you?",
-    "options": [
-      "What the Portuguese government wanted other countries to think",
-      "That the Portuguese government was lying about what happened",
-      "That the fighting was smaller than the missionary suggested",
-      "That Lisbon had not yet received full reports from Angola"
-    ],
-    "correct": 0,
-    "explanation": "A word can be chosen carefully and still be dishonest. It can also be chosen carefully and be true. You are not deciding which yet. You are noticing that somebody made a choice, and asking what it was for. Option {opt1} jumps to a verdict you cannot support yet."
   },
   {
     "type": "content",
     "tag": "The turn",
-    "html": "<h2>The word for what you just did</h2><p>You did not ask whether the account was true. You asked who made it, and from where.</p><p>That is <strong>provenance</strong>. The IEB splits it into four questions, and you will see them called OPVL. When a question asks you to judge a source, work through all four.</p><p><strong>Origin.</strong> Who made this, when, and where.</p><p><strong>Purpose.</strong> Why they made it, and who they made it for.</p><p><strong>Value.</strong> What this source lets you see that another source could not.</p><p><strong>Limitation.</strong> What this source was never in a position to tell you.</p><p>Value and limitation are not good and bad. A government statement written to justify a war has enormous value as evidence of what that government wanted people to believe. Use those four words. A marker should not have to guess that you meant them.</p>",
-    "remember": "Origin, purpose, value, limitation. Four separate questions, and you answer all four.",
+    "html": "<h2>The word for what you just did</h2><p>You didn't ask whether the account was true. You asked who made it, and from where.</p><p>That's <strong>provenance</strong>: the origin of a source. Who produced it, when, and what position they were in when they did.</p><p>Every source question in Paper 1 sits on it. You can't judge how far to trust something until you know where it came from.</p>",
+    "remember": "A source is somebody's account, made somewhere, for someone. Start there, not with whether it's true.",
     "terms": [
       {
         "term": "Provenance",
-        "def": "Where a source came from: who made it, when, and what position they held. The first thing you establish."
-      },
-      {
-        "term": "OPVL",
-        "def": "Origin, purpose, value and limitation. The four-part frame the IEB uses to judge a source. It appears in the exam and in three of the SBA rubrics."
+        "def": "Where a source came from: who made it, when, and what position they held. The first thing you work out."
       },
       {
         "term": "Secondary source",
-        "def": "An account written after the events by someone who was not there. It has hindsight and no first-hand knowledge."
+        "def": "An account written after the events by someone who wasn't there. It has hindsight and no first-hand knowledge."
       }
     ]
   },
   {
-    "type": "question",
-    "level": "Evaluate",
-    "marks": "Practice",
-    "q": "A question asks you to judge a Portuguese government statement from 1961. Which answer is built the way the IEB wants?",
-    "options": [
-      "It gives the origin, the purpose, the value and the limitation.",
-      "It explains that the statement is biased because a government produced it.",
-      "It quotes the statement and says the wording is clearly wartime propaganda.",
-      "It compares the statement against another source and notes where they differ."
-    ],
-    "correct": 0,
-    "explanation": "You get all four: origin, purpose, value and limitation. Option {opt1} names the purpose and stops, so you never say what the statement is still worth. Option {opt2} judges before placing where it came from. Option {opt3} answers a different question well. Miss value and you throw away a source that shows what Lisbon wanted Angolans to believe."
-  },
-  {
     "type": "content",
     "tag": "The evidence",
-    "html": "<h2>Portugal was the last to leave</h2><p>Britain and France began letting go of their African colonies in the 1950s and 1960s. Portugal did the opposite and tightened its grip.</p><p>Lisbon didn't treat Angola as a possession abroad. It treated it as part of Portugal, so leaving was never considered.</p>",
+    "html": "<h2>Portugal was the last to leave</h2><p>Britain and France began letting go of their African colonies in the 1950s and 1960s. Portugal did the opposite and tightened its grip.</p><p>Lisbon didn't treat Angola as a possession abroad. It treated it as part of Portugal, so leaving was never on the table.</p>",
     "terms": [
       {
         "term": "Colonialism",
-        "def": "One country governing another and running it for its own benefit. Control for someone else's gain."
+        "def": "One country governing another and running it for its own benefit. Not just control: control for someone else's gain."
       },
       {
         "term": "Metropole",
@@ -849,7 +712,7 @@ const FLOW = [
   {
     "type": "content",
     "tag": "The evidence",
-    "html": "<h2>1961, and the thirteen years after it</h2><p>In February 1961 uprisings broke out in Luanda and in the north. Land had been taken, and Portuguese settlers and traders treated Angolans harshly.</p><p>The rising was crushed. What followed was a war for independence that ran for thirteen years. Three separate movements fought it, and they never combined: the MPLA, the FNLA and UNITA.</p>",
+    "html": "<h2>1961, and the thirteen years after it</h2><p>In February 1961 uprisings broke out in Luanda and in the north. Land had been taken, and Portuguese settlers and traders treated Angolans harshly.</p><p>The rising was crushed. What followed was a war for independence that ran for thirteen years, fought by three separate movements who never combined: the MPLA, the FNLA and UNITA.</p>",
     "terms": [
       {
         "term": "MPLA",
@@ -903,7 +766,7 @@ const FLOW = [
   },
   {
     "type": "question",
-    "level": "Comprehend",
+    "level": "Interpret",
     "mode": "order",
     "q": "Put these five events in the order they happened.",
     "items": [
@@ -920,9 +783,8 @@ const FLOW = [
       2,
       4
     ],
-    "explanation": "1961, then the early 1970s, then April 1974, then January 1975. The easy mistake is putting the coup before the money trouble. It runs the other way. The wars drained the budget for years, and that is why officers overthrew their own government. Reverse the order and your causes explain nothing.",
-    "noSource": true,
-    "marks": "Practice"
+    "explanation": "1961, then the early 1970s, then April 1974, then January 1975. The easy mistake is putting the coup before the money trouble. It's the other way round. The wars had been draining the budget for years, and that's why you get officers overthrowing their own government.",
+    "noSource": true
   },
   {
     "type": "source",
@@ -931,7 +793,7 @@ const FLOW = [
     "source": {
       "attr": "Source A: adapted from an editorial note, Foreign Relations of the United States 1969 to 1976, Volume XXVIII, Southern Africa, Document 101. A United States government publication.",
       "body": "<p>The overthrow of Marcello Caetano's government in Portugal on April 25, 1974, led to a series of negotiations between the metropole [Portugal itself] and the African liberation movements &hellip;</p><p>Negotiations with the FNLA, the MPLA and UNITA were hampered [held back] by continued dissension [disagreement] among the leadership &hellip; The [Portuguese] proposal was immediately rejected by the FNLA, and internal dissent within the MPLA threatened to fracture [break up] the organization &hellip;</p><p>An agreement was signed January 15, 1975, between the liberation movements and Portugal, providing for Angolan independence on November 11 and equal representation in a transition government that would take office on January 31, 1975. A High Commissioner was appointed to represent Portugal's interests until independence. The transitional government was responsible for organizing elections and drafting the fundamental law [a temporary constitution] &hellip; The agreement, signed at Alvor, Portugal, became known as the Alvor Agreement.</p>",
-      "toggle": "American government editors compiled this note long after 1975. It is a summary of events rather than a document written at the time. That's why it reads so evenly: nobody in it is defending themselves. One clue to where it came from is the spelling. Organization and organizing are American spellings, which is how a United States government publication writes them.",
+      "toggle": "This note was compiled by American government editors long after 1975, so it's a summary of events rather than a document written at the time. That's why it reads so evenly: nobody in it is defending themselves. One clue to where it came from is the spelling. Organization and organizing are American spellings, which is how a United States government publication writes them.",
       "toggleLabel": "What does this actually mean?"
     },
     "terms": [
@@ -951,8 +813,7 @@ const FLOW = [
   },
   {
     "type": "question",
-    "level": "Comprehend",
-    "marks": "Practice",
+    "level": "Extract",
     "mode": "sort",
     "q": "Sort each statement by where it comes from.",
     "cols": [
@@ -971,12 +832,11 @@ const FLOW = [
       "2": 1,
       "3": 1
     },
-    "explanation": "The first two are on the page. The other two are true, and you read them earlier in this lesson. That's what makes them easy to put in the wrong column. A quote question only takes what the source says, so check whether you're reading it or remembering it.",
-    "marks": "Practice"
+    "explanation": "The first two are on the page. The other two are true, and you read them earlier in this lesson. That's what makes them easy to put in the wrong column. A quote question only takes what the source says, so check whether you're reading it or remembering it."
   },
   {
     "type": "question",
-    "level": "Comprehend",
+    "level": "Extract",
     "q": "According to Source A, what event on 25 April 1974 opened the negotiations with the liberation movements?",
     "options": [
       "The overthrow of Marcello Caetano's government in Portugal",
@@ -985,12 +845,11 @@ const FLOW = [
       "The appointment of a High Commissioner for Portugal"
     ],
     "correct": 0,
-    "explanation": "Option {opt0}, straight off the first line. Option {opt2} is real and it's in the source, but it happens months later. The question hands you a date. Ignore it and you answer with the right event from the wrong month.",
-    "marks": "2 marks"
+    "explanation": "Option {opt0}, straight off the first line. Option {opt2} is real and it's in the source, but it happens months later. The question hands you a date. Use it."
   },
   {
     "type": "question",
-    "level": "Comprehend",
+    "level": "Interpret",
     "q": "Explain the concept 'colonialism' in the context of Portugal's control of Angola in 1974.",
     "options": [
       "One country governing another and running it for its benefit",
@@ -999,27 +858,12 @@ const FLOW = [
       "A country trading with another on terms both sides agreed"
     ],
     "correct": 0,
-    "explanation": "Portugal ran Angola from Lisbon, and ran it for Lisbon. You need both halves in your answer. Option {opt3} sounds fair, but two countries that trade can each refuse the next deal, and Angola had no such choice. Leave out the control and you have described trade rather than colonialism.",
-    "noSource": true,
-    "marks": "2 marks"
+    "explanation": "Portugal ran Angola from Lisbon, and ran it for Lisbon. Both halves have to be in your answer. Option {opt3} sounds fair, but two countries trading can both walk away and Angola couldn't.",
+    "noSource": true
   },
   {
     "type": "question",
-    "level": "Analyse",
-    "marks": "Practice",
-    "q": "Source A was written by American officials rather than by Portuguese or Angolan ones. What does that change about it?",
-    "options": [
-      "It reports the negotiations from outside, with nobody's case to defend.",
-      "It gives a neutral account, because the United States was not involved.",
-      "It carries more detail, because outsiders had access to both sides.",
-      "It is less reliable, because the writers were not present in Luanda."
-    ],
-    "correct": 0,
-    "explanation": "Standing outside a negotiation is a position too, and it shapes what a writer records. American officials had no stake in how Portugal explained itself, so this account escapes that pressure. Option {opt1} goes too far. The United States had interests in Angola and a preference about who governed it. Treat outside as neutral and you stop looking for the bias it does carry."
-  },
-  {
-    "type": "question",
-    "level": "Comprehend",
+    "level": "Interpret",
     "q": "What does Source A suggest about the three movements before Alvor was signed?",
     "options": [
       "They were divided, and the divisions ran inside them as well",
@@ -1028,8 +872,7 @@ const FLOW = [
       "They agreed on everything except the exact date of independence"
     ],
     "correct": 0,
-    "explanation": "The word to notice is internal. They were splitting from each other and from themselves at the same time. Option {opt3} is the tidier story, and the tidy version is usually what you get for reading too fast. Take it and you miss the split inside each movement.",
-    "marks": "2 marks"
+    "explanation": "The word to notice is internal. They were splitting from each other and from themselves at the same time. Option {opt3} is the tidier story. But tidy usually means you've stopped reading."
   },
   {
     "type": "question",
@@ -1042,8 +885,7 @@ const FLOW = [
       "Not useful, because it never names the three liberation movements"
     ],
     "correct": 0,
-    "explanation": "Good on dates, terms and order. American editors wrote it years later, so it is a summary rather than a document from 1975. Option {opt1} has a point buried in it. But careful is not the same as useless. Dismiss it and you throw away a source that is strong on exactly what you were asked.",
-    "marks": "6 marks"
+    "explanation": "Good on dates, terms and order. It was written years later by American editors, so it's a summary and not a document from 1975. Option {opt1} has a point buried in it. But careful isn't the same as useless, so say what this one lets you do."
   },
   {
     "type": "question",
@@ -1051,13 +893,12 @@ const FLOW = [
     "q": "What's the main limitation of Source A for understanding what Angolans wanted in 1975?",
     "options": [
       "It records what the leaderships negotiated, not what people thought",
-      "It gives no dates, so the order cannot be established",
+      "It gives no dates, so the order can't be worked out",
       "It was written in Portuguese and has been badly translated since",
       "It contradicts other published accounts of the Alvor terms it lists"
     ],
     "correct": 0,
-    "explanation": "A limitation is what a source couldn't see. This one's a record of what leaderships agreed, so nobody outside those rooms is in it. Option {opt3} would be a fault, not a gap, and you were asked about the gap.",
-    "marks": "2 marks"
+    "explanation": "A limitation is what a source couldn't see. This one's a record of what leaderships agreed, so nobody outside those rooms is in it. Option {opt3} would be a fault, not a gap, and you were asked about the gap."
   },
   {
     "type": "carousel",
@@ -1097,11 +938,11 @@ const FLOW = [
     "q": "Which sentence best sums up what this lesson establishes?",
     "options": [
       "Angola's independence was decided in Lisbon, not Luanda. Portugal collapsed so fast that no settlement could be built, and three armed movements met independence with no agreed government",
-      "Portugal fought a colonial war in Angola from 1961. Army officers overthrew the government in Lisbon in April 1974, ending thirteen years of fighting across three territories",
-      "The Alvor Agreement failed because Portugal refused to withdraw its forces on the date it had agreed. The transitional government in Luanda was left unable to take office at all"
+      "Portugal fought a colonial war in Angola from 1961 until army officers overthrew the government in Lisbon in April 1974, ending thirteen years of fighting across three separate territories",
+      "The Alvor Agreement failed because Portugal refused to withdraw its forces on the date it had agreed, leaving the transitional government in Luanda unable to take office at all"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} says what all of it produced: nobody had a settled claim to govern when the Portuguese left. Option {opt1} is accurate line by line, which is why you might take it. But it stops at the story and never says what the story caused, so it earns you nothing.",
+    "explanation": "Option {opt0} says what all of it produced: nobody had a settled claim to govern when the Portuguese walked out. Option {opt1}'s accurate line by line, which is why you might take it. But it stops at the story and never says what the story caused.",
     "noSource": true,
     "buildLabel": "What Lesson 1 argues"
   },
@@ -1114,20 +955,19 @@ const FLOW = [
   {
     "type": "content",
     "tag": "Beyond the exam",
-    "html": "<h2>Who was in the room</h2><p>The habit that matters here isn't a date. It's asking where an account came from before deciding what to do with it.</p><p>You'll use it constantly. Somebody tells you why a job fell through, why a friendship ended, why a price went up. The account arrives already shaped by where the person was standing.</p><p>That doesn't make anyone a liar. It means you ask what they could see from there, and what they'd have reason to leave out. Then you go looking for someone who stood somewhere else.</p>"
+    "html": "<h2>Who was in the room</h2><p>The useful habit in this lesson isn't a date. It's asking where an account came from before deciding what to do with it.</p><p>You'll use it constantly. Somebody tells you why a job fell through, why a friendship ended, why a price went up. The account arrives already shaped by where the person was standing.</p><p>That doesn't make anyone a liar. It means you ask what they could see from there, and what they'd have reason to leave out. Then you go looking for someone who stood somewhere else.</p>"
   }
 ];
 
 const CHIP = {
-  Stand:{cls:"chip-a"}, Evidence:{cls:"chip-b"}, Focus:{cls:"chip-c"}, Counter:{cls:"chip-d"},
-  Comprehend:{cls:"chip-a"}, Apply:{cls:"chip-b"}, Analyse:{cls:"chip-c"}, Evaluate:{cls:"chip-d"},
-  Recall:{cls:"chip-a"}, Understand:{cls:"chip-b"},
+  Argue:{cls:"chip-argue"}, Evidence:{cls:"chip-evidence"}, Weigh:{cls:"chip-weigh"},
+  Extract:{cls:"chip-extract"}, Interpret:{cls:"chip-interpret"}, Evaluate:{cls:"chip-evaluate"},
   instinct:{cls:"chip-instinct"}
 };
 // A lesson carries one spine or the other. Work it out on first use rather than at
 // load time, so this never depends on FLOW having been evaluated yet.
-const SOURCE_SPINE = ["Comprehend","Apply","Analyse","Evaluate"];
-const ESSAY_SPINE  = ["Stand","Evidence","Focus","Counter"];
+const SOURCE_SPINE = ["Extract","Interpret","Evaluate"];
+const ESSAY_SPINE  = ["Argue","Evidence","Weigh"];
 let _spine = null;
 function spine(){
   if(_spine) return _spine;
@@ -1411,7 +1251,7 @@ function renderMCQ(item){
       ${sourcePeek(item)}
       <div class="q-text">${item.q}</div>
       <div class="options">${opts}</div>
-      ${answered?`<div class="explanation ${state.answers[state.idx]===item.correct?"ok":"no"}"><div class="expl-label">${state.answers[state.idx]===item.correct?"Correct":"Not this one"}</div><div class="expl-text">${resolveOpts(item.explanation, order)}</div></div>`:""}
+      ${answered?`<div class="explanation"><div class="expl-label">Why</div><div class="expl-text">${resolveOpts(item.explanation, order)}</div></div>`:""}
     </div>`;
   if(!answered){
     stage.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
@@ -1444,7 +1284,7 @@ function renderOrder(item){
         <div class="inter-pool" id="placed">${placedHtml||`<div style="color:var(--fade);font-size:0.9rem;padding:0.4rem 0;">Tap an event below to start putting them in order.</div>`}</div>
         ${remaining.length?`<div style="height:1px;background:rgba(27,42,51,0.14);margin:0.9rem 0;"></div><div class="inter-pool" id="pool">${poolHtml}</div>`:""}
       </div>
-      ${answered?`<div class="explanation ${state.answers[state.idx]===item.correct?"ok":"no"}"><div class="expl-label">${state.answers[state.idx]===item.correct?"Correct":"Not this one"}</div><div class="expl-text">${resolveOpts(item.explanation,null)}</div></div>`:""}
+      ${answered?`<div class="explanation"><div class="expl-label">Why</div><div class="expl-text">${resolveOpts(item.explanation,null)}</div></div>`:""}
     </div>`;
   if(!answered){
     stage.querySelectorAll("[data-pool]").forEach(b=>b.addEventListener("click",()=>{ placed.push(parseInt(b.dataset.pool,10)); renderOrder(item); }));
@@ -1489,7 +1329,7 @@ function renderSort(item){
         </div>
         ${unplaced.length?`<div style="height:1px;background:rgba(27,42,51,0.14);margin:0.9rem 0;"></div><div class="inter-pool">${pool}</div>`:""}
       </div>
-      ${answered?`<div class="explanation ${state.answers[state.idx]===item.correct?"ok":"no"}"><div class="expl-label">${state.answers[state.idx]===item.correct?"Correct":"Not this one"}</div><div class="expl-text">${resolveOpts(item.explanation,null)}</div></div>`:""}
+      ${answered?`<div class="explanation"><div class="expl-label">Why</div><div class="expl-text">${resolveOpts(item.explanation,null)}</div></div>`:""}
     </div>`;
   if(!answered){
     stage.querySelectorAll("[data-place]").forEach(b=>b.addEventListener("click",()=>{ col[parseInt(b.dataset.place,10)]=parseInt(b.dataset.col,10); renderSort(item); }));
@@ -1606,8 +1446,6 @@ function bindToggles(){
 
 // ============ RESULTS ============
 function showResults(){
-  kulaEmbed("completed");
-  setTimeout(function(){var b=document.getElementById("finish-btn");if(b&&!b.dataset.kembed){b.dataset.kembed="1";b.addEventListener("click",function(){kulaEmbed("advance");});}},0);
   topBar.classList.add("hidden");
   nav.classList.add("hidden");
   let correct=0;
@@ -1655,7 +1493,7 @@ function showResults(){
     const back=document.createElement("div");
     back.className="pop-back";
     const D = RESULTS.done||{};
-    back.innerHTML=`<div class="pop"><div class="pop-label">${esc(D.label||"Lesson complete")}</div>${D.title?`<h3 style="margin:.4rem 0 .2rem;font-size:1.05rem;">${esc(D.title)}</h3>`:""}<div class="pop-text">${esc(D.text||"Tap Done to continue to the next lesson.")}</div><button class="pop-btn" id="fin-ok">Close</button></div>`;
+    back.innerHTML=`<div class="pop"><div class="pop-label">${esc(D.label||"Lesson complete")}</div>${D.title?`<h3 style="margin:.4rem 0 .2rem;font-size:1.05rem;">${esc(D.title)}</h3>`:""}<div class="pop-text">${esc(D.text||"Tap Done to continue to the next lesson.")}</div><button class="pop-btn" id="fin-ok">Done</button></div>`;
     document.body.appendChild(back);
     document.getElementById("fin-ok").addEventListener("click",()=>back.remove());
   });
@@ -1677,32 +1515,30 @@ renderCover();
    Injects its own button so there is no stray markup, and lives inside the
    single script block so a first-to-last script extraction still parses. */
 (function(){
-  try{ var st = localStorage.getItem("kula-mode");
-    if(st === "dark"){ document.body.classList.add("dark"); }
-    else if(st !== "light" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){ document.body.classList.add("dark"); }
-  }catch(e){}
+  var NATIVE = "light";
+  try{ if(localStorage.getItem("kula-mode")==="alt"){ document.body.classList.add("alt"); } }catch(e){}
   var SUN='<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>';
   var MOON='<path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z"/>';
-  var b=document.getElementById("kula-mode-toggle");
+  var b=document.getElementById("mode-toggle");
   if(!b){
     b=document.createElement("button");
-    b.className="mode-toggle"; b.id="kula-mode-toggle"; b.type="button";
+    b.className="mode-toggle"; b.id="mode-toggle"; b.type="button";
     b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" id="mode-icon"></svg><span id="mode-label"></span>';
     document.body.appendChild(b);
   }
   var lab=document.getElementById("mode-label"), ic=document.getElementById("mode-icon");
   function paint(){
-    var onDark=document.body.classList.contains("dark");
-    var showing = onDark ? "dark" : "light";
+    var onAlt=document.body.classList.contains("alt");
+    var showing = onAlt ? (NATIVE==="dark" ? "light" : "dark") : NATIVE;
     var offering = showing==="dark" ? "light" : "dark";
-    lab.textContent = offering==="light" ? "Light mode" : "Dark mode";
+    lab.textContent = offering==="light" ? "Light Mode" : "Dark Mode";
     ic.innerHTML = offering==="light" ? SUN : MOON;
-    b.setAttribute("aria-pressed", onDark ? "true" : "false");
+    b.setAttribute("aria-pressed", onAlt ? "true" : "false");
     b.setAttribute("aria-label", "Switch to " + offering + " mode");
   }
   b.addEventListener("click",function(){
-    var onDark=document.body.classList.toggle("dark");
-    try{ localStorage.setItem("kula-mode", onDark ? "dark" : "light"); }catch(e){}
+    var onAlt=document.body.classList.toggle("alt");
+    try{ localStorage.setItem("kula-mode", onAlt ? "alt" : "native"); }catch(e){}
     paint();
   });
   paint();
